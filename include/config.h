@@ -29,20 +29,20 @@ constexpr unsigned long kBootResetHoldMs = 3000UL;
 /** Ignore BOOT taps shorter than this (debounce). */
 constexpr unsigned long kBootTapMinMs = 40UL;
 
-// --- Display: GC9A01 1.28" round 240×240 (SPI) ---
-constexpr gpio_num_t kDisplayPinRst = GPIO_NUM_0;
-constexpr gpio_num_t kDisplayPinCs = GPIO_NUM_1;
-constexpr gpio_num_t kDisplayPinDc = GPIO_NUM_10;
-constexpr gpio_num_t kDisplayPinMosi = GPIO_NUM_3;  // display SDA
-constexpr gpio_num_t kDisplayPinSclk = GPIO_NUM_4;  // display SCL
+// --- Display: ST7789 240×240 (SPI) ---
+constexpr gpio_num_t kDisplayPinRst = GPIO_NUM_14;
+constexpr gpio_num_t kDisplayPinCs = GPIO_NUM_10;
+constexpr gpio_num_t kDisplayPinDc = GPIO_NUM_9;
+constexpr gpio_num_t kDisplayPinMosi = GPIO_NUM_11;  // display SDA
+constexpr gpio_num_t kDisplayPinSclk = GPIO_NUM_12;  // display SCL
 
 constexpr int kDisplayWidth = 240;
 constexpr int kDisplayHeight = 240;
 
 constexpr uint32_t kDisplaySpiWriteHz = 40000000;
-// GC9A01 modules often need invert + BGR for correct black/green output
-constexpr bool kDisplayInvert = true;
-constexpr bool kDisplayRgbOrder = true;
+// GC9A01 modules often need invert + BGR for correct black/green output (but ST7789 do not)
+constexpr bool kDisplayInvert = false; // Set to false first (if colors look negative, flip to true)
+constexpr bool kDisplayRgbOrder = false; // Set to false for standard RGB (if red/blue are swapped, flip to true)
 
 // --- Radar center defaults (overridden via WiFi setup portal) ---
 constexpr double kDefaultRadarLat = 52.3676;
