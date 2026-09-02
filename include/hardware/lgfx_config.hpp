@@ -5,10 +5,10 @@
 
 #include "config.h"
 
-/** LovyanGFX device: GC9A01 on SPI. Pin values come from config.h. */
+/** LovyanGFX device: ST7789 on SPI. Pin values come from config.h. */
 class LGFX : public lgfx::LGFX_Device {
   lgfx::Bus_SPI _bus;
-  lgfx::Panel_GC9A01 _panel;
+  lgfx::Panel_ST7789 _panel;
 
 public:
   LGFX() {
