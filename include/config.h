@@ -41,7 +41,7 @@ constexpr int kDisplayHeight = 240;
 
 constexpr uint32_t kDisplaySpiWriteHz = 40000000;
 // GC9A01 modules often need invert + BGR for correct black/green output (but ST7789 do not)
-constexpr bool kDisplayInvert = false; // Set to false first (if colors look negative, flip to true)
+constexpr bool kDisplayInvert = true; // Set to false first (if colors look negative, flip to true)
 constexpr bool kDisplayRgbOrder = false; // Set to false for standard RGB (if red/blue are swapped, flip to true)
 
 // --- Radar center defaults (overridden via WiFi setup portal) ---
