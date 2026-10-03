@@ -39,7 +39,9 @@ constexpr gpio_num_t kDisplayPinSclk = GPIO_NUM_12;  // display SCL
 constexpr int kDisplayWidth = 240;
 constexpr int kDisplayHeight = 240;
 
-constexpr uint32_t kDisplaySpiWriteHz = 40000000;
+//constexpr uint32_t kDisplaySpiWriteHz = 40000000;
+constexpr uint32_t kDisplaySpiWriteHz = 20000000; // Drop to 20MHz to prevent signal noise on breadboards/jumpers
+
 // GC9A01 modules often need invert + BGR for correct black/green output (but ST7789 do not)
 constexpr bool kDisplayInvert = true; // Set to false first (if colors look negative, flip to true)
 constexpr bool kDisplayRgbOrder = false; // Set to false for standard RGB (if red/blue are swapped, flip to true)
