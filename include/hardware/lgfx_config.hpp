@@ -29,6 +29,13 @@ public:
       cfg.pin_rst = static_cast<int>(config::kDisplayPinRst);
       cfg.invert = config::kDisplayInvert;
       cfg.rgb_order = config::kDisplayRgbOrder;
+
+      // --- EXPLICIT ST7789 PANEL SIZE & OFFSETS ---
+      cfg.panel_width  = 240;
+      cfg.panel_height = 240;
+      cfg.offset_x     = 0;
+      cfg.offset_y     = 0;  // Some 1.54" ST7789 boards require offset_y = 32 or 80 if shifted
+      
       _panel.config(cfg);
     }
     setPanel(&_panel);
