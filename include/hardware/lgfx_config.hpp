@@ -36,13 +36,12 @@ public:
       cfg.memory_width = 240;  // Standard ST7789 RAM width
       cfg.memory_height = 320; // Internal driver RAM size (320 max)
       cfg.offset_x     = 0;
-      cfg.offset_y     = 32;  // Some 1.54" ST7789 boards require offset_y = 32 or 80 if shifted
+      cfg.offset_y     = 0;  // Some 1.54" ST7789 boards require offset_y = 32 or 80 if shifted
+
+      // Alignment override for square ST7789 modules
+      cfg.offset_rotation = 0;
       
       _panel.config(cfg);
-
-      // Set display orientation (0, 1, 2, or 3)
-      // Try 0 or 1 to match your 1.54" panel orientation
-      setRotation(1);
       
     }
     setPanel(&_panel);
